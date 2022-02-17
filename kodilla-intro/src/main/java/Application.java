@@ -8,7 +8,6 @@ public class Application {
         this.age = age;
         this.height = height;
 
-
         if (this.name != null) {
             if (this.age > 30 && this.height > 160) {
                 System.out.println("User is older than 30 and taller than 160cm");
