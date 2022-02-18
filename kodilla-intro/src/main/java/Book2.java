@@ -3,7 +3,7 @@ public class Book2 {
 
         Book book = Book.of("Isaac Asimov", "The Galaxy");
 
-//        System.out.println(book.title);
+        System.out.println(book.getAuthor() + " " + book.getTitle());
     }
 }
 
