@@ -13,7 +13,19 @@ public class Car {
         System.out.println("Lights were turned on");
     }
 
+    public void displayNumberOfSeats() {
+        System.out.println("Number of seats: " + seats);
+    }
+
     public void openDoors() {
         System.out.println("Opening 4 doors");
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public int getSeats() {
+        return seats;
     }
 }
