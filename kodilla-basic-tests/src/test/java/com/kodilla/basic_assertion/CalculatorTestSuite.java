@@ -28,6 +28,7 @@ public class CalculatorTestSuite {
         int a = 5;
         int squaringResult = (int) calculator3.squaring(a);
         assertEquals(25, squaringResult);
+        assertEquals(0, 0, 0.01);
     }
 
     @Test
@@ -36,6 +37,7 @@ public class CalculatorTestSuite {
         int a = -5;
         int squaringResult2 = (int) calculator4.squaring(a);
         assertEquals(25, squaringResult2);
+        assertEquals(0, 0, 0.01);
     }
 
     @Test
