@@ -24,8 +24,8 @@ public class Application {
         }
 
         Calculator calculator3 = new Calculator();
-        int squaringResult = calculator3.squaring(a);
-        boolean correct3 = ResultChecker.assertEquals(25, squaringResult);
+        double squaringResult = calculator3.squaring(a);
+        boolean correct3 = ResultChecker.assertEquals((int) 25.0, (int) squaringResult);
         if (correct3) {
             System.out.println("Metoda podnoszenia do kwadratu działa poprawnie dla liczby " + a);
         } else {

@@ -4,13 +4,18 @@ public class Person {
 
     String firstName;
     int age;
-    static String job;
+    Job job;
 
-    public void Person(String firstName, int age, String job) {
+    public Person(String firstName, int age, Job job) {
         this.firstName = firstName;
         this.age = age;
         this.job = job;
     }
+
+    public void getResponsibilities(){
+        System.out.println(job.getResponsibilities());
+    }
+
 
 //    public static Accountant getJob() {
 //        if (job.equals("Accountant")) {
