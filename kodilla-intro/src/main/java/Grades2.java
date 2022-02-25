@@ -14,11 +14,9 @@ public class Grades2 {
         gradesAdam.add(5);
 
         int lastGrade = gradesAdam.getLastGrade();
-
         System.out.println(lastGrade);
 
         double averageGrade = gradesAdam.getAverage();
-
         System.out.println(averageGrade);
     }
 }

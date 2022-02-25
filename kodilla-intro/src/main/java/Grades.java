@@ -16,19 +16,14 @@ public class Grades {
     }
 
     public int getLastGrade() {
-
         return this.grades[size - 1];
     }
 
     public double getAverage() {
-
         double result = 0;
         for (int i = 0; i < size; i++) {
             result += this.grades[i];
         }
-
         return result / size;
     }
-
-
 }
