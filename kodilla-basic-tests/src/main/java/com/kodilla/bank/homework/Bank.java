@@ -1,19 +1,26 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    public int[][] bank;
-    int size = 0;
+    CashMachine[] cashMachines;
 
-    public Bank() {
-        this.bank = new int [0][];
-        this.size = 0;
+    public Bank(int size) {
+        this.cashMachines = new CashMachine[size];
     }
 
-    public void addCashMachine(CashMachine cashMachine) {
-        this.size++;
-        int[][] newTab = new int[this.size][];
-        System.arraycopy(bank, 0, newTab, 0, bank.length);
-        newTab[this.size - 1][] = new CashMachine;
-        this.bank = newTab;
+    public void addCashMachine(int operationSize) {
+        for (int i = 0; i < cashMachines.length; i++) {
+            if (cashMachines[i] == null) {
+                cashMachines[i] = new CashMachine(operationSize);
+                return;
+            }
+        }
     }
+
+//    public void addCashMachine(int value2) {
+//        this.size++;
+//        int[] newTab = new int[this.size];
+//        System.arraycopy(bank, 0, newTab, 0, bank.length);
+//        newTab[this.size - 1] = value2;
+//        this.bank = newTab;
+//    }
 }

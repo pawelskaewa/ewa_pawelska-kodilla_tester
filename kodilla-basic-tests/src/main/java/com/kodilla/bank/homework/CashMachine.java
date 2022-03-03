@@ -4,7 +4,7 @@ public class CashMachine {
     private int[] cashMachine;
     private int size;
 
-    public CashMachine() {
+    public CashMachine(int size) {
         this.size = 0;
         this.cashMachine = new int[0];
     }
