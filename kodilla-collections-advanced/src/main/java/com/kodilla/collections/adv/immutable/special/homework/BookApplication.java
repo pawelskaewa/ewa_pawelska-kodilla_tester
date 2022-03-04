@@ -18,6 +18,12 @@ public class BookApplication {
         System.out.println(dziady == ludzieBezdomni);
         System.out.println(ludzieBezdomni.equals(ludzieBezdomni2));
 
-        System.out.println(dziady.getAuthor());
+        Book ludzieBezdomni3 = BookManager.createBook("Ludzie bezdomni", "Stefan Zeromski");
+
+        System.out.println(ludzieBezdomni.equals(ludzieBezdomni3));
+
+//        books.add(ludzieBezdomni3);
+//
+//        System.out.println(ludzieBezdomni == ludzieBezdomni3);
     }
 }
