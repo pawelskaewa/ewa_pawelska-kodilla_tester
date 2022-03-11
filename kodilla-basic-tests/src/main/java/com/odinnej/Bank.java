@@ -1,26 +1,36 @@
-package com.kodilla.bank.homework;
+package com.odinnej;
+
+import com.sun.source.tree.NewArrayTree;
 
 public class Bank {
     CashMachine[] cashMachines;
-    int size2 = 0;
 
-    public Bank(int size2) {
-        this.cashMachines = new CashMachine[size2];
+    public Bank(int size) {
+        cashMachines = new CashMachine[size];
     }
 
-    public void addCashMachine(CashMachine cashMachine) {
-        this.size2++;
-        CashMachine[] newTab = new CashMachine[this.size2];
-        System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
-        newTab[this.size2 - 1] = cashMachine;
-        this.cashMachines = newTab;
+    public void deposit(int cashMachineIndex, double amount) {
+        cashMachines[cashMachineIndex].depositMoney(amount);
     }
 
-    public double bankBalance() {
+    public void withdraw(int cashMachineIndex, double amount) {
+        cashMachines[cashMachineIndex].withdrawMoney(amount);
+    }
+
+    public void addMachine(int operationSize) {
+        for (int i = 0; i < cashMachines.length; i++) {
+            if (cashMachines[i] == null) {
+                cashMachines[i] = new CashMachine(operationSize);
+                return;
+            }
+        }
+    }
+
+    public double balance() {
         double balance = 0;
-        for (int n = 0; n < cashMachines.length; n++) {
-            if (cashMachines[n] != null) {
-                balance += cashMachines[n].getBalance();
+        for (int i = 0; i < cashMachines.length; i++) {
+            if (cashMachines[i] != null) {
+                balance += cashMachines[i].balance();
             }
         }
         return balance;
@@ -50,7 +60,7 @@ public class Bank {
         int count = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             if (cashMachines[i] != null) {
-                count += cashMachines[i].countDepositTransactions();
+                count += cashMachines[i].depositCount();
             }
         }
         return count;
@@ -60,7 +70,7 @@ public class Bank {
         int count = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             if (cashMachines[i] != null) {
-                count += cashMachines[i].countWithdrawTransactions();
+                count += cashMachines[i].withdrawCount();
             }
         }
         return count;
