@@ -12,7 +12,7 @@ public class TaskRepository {
         tasks.add(new Task("doing homework", LocalDate.of(2022, 03, 10), LocalDate.of(2022, 03, 13)));
         tasks.add(new Task("ordering groceries", LocalDate.of(2022, 03, 11), LocalDate.of(2022, 03, 12)));
         tasks.add(new Task("folding clothes", LocalDate.of(2022, 03, 15), LocalDate.of(2022, 03, 16)));
-        tasks.add(new Task("washing windows", LocalDate.of(2022, 03, 16), LocalDate.of(2022, 03, 20)));
+        tasks.add(new Task("cleaning windows", LocalDate.of(2022, 03, 16), LocalDate.of(2022, 03, 20)));
         return tasks;
     }
 }
