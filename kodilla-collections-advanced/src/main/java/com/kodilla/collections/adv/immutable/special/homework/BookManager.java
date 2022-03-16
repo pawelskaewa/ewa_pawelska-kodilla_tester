@@ -9,12 +9,20 @@ public class BookManager {
 
     public static Book createBook(String title, String author) {
         Book randomNewBook = new Book(title, author);
-        books.add(randomNewBook);
+
+        if (books.size() == 0) {
+            books.add(randomNewBook);
+        }
+
         for (int n = 0; n < books.size(); n++)
-            if (randomNewBook.equals(books.get(n)))
+            if (randomNewBook.equals(books.get(n))) {
+                System.out.println("Jestem w ifie");
                 return books.get(n);
-            else
+            } else {
+                books.add(randomNewBook);
                 return randomNewBook;
-            return randomNewBook; // nie mam innego pomysłu, zastanawiam się, czy to kolejne return nie nadpisze return z pętli for, ale wolę wysłać i się dopytać czy to w ogóle ok niż się zastanawiać kolejne dni, a może dasz mi wskazówkę jeśli jest źle :D
+            }
+        System.out.println("Jestem poza ifem");
+        return randomNewBook;
     }
 }
