@@ -16,7 +16,7 @@ public class ForumStats {
                 .stream()
                 .filter(u -> u.getAge() < 40)
                 .mapToInt(n -> n.getNumberOfPost())
-                .average()                                 // [3]
+                .average()
                 .getAsDouble();
         System.out.println("The average of posts for users younger than 40: " + averagePostsForUsersBelowForty);
     }
