@@ -23,11 +23,10 @@ public class Warehouse {
     }
 
     public static Order getOrder(String searchedOrder) throws OrderDoesntExistException {
-        Order orderInQuestion = orders
+        return orders
                 .stream()
                 .filter(u -> u.getNumber().equals(searchedOrder))
                 .findAny()
                 .orElseThrow(() -> new OrderDoesntExistException());
-        return orderInQuestion;
     }
 }
