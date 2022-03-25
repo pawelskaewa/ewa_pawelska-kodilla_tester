@@ -63,9 +63,9 @@ public class BankTestSuite {
     @Test
     public void cashMachineBalanceShouldBeOneHundredPlus() {
         cashMachineTest.addTransaction(100);
-        cashMachineTest.addTransaction(-200);
+        cashMachineTest.addTransaction (-4999);
         cashMachineTest.addTransaction(200.5);
-        assertEquals(100.5, cashMachineTest.getBalance());
+        assertEquals(-4698.5, cashMachineTest.getBalance());
     }
 
     @Test

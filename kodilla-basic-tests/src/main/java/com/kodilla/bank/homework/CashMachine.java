@@ -11,11 +11,15 @@ public class CashMachine {
     }
 
     public void addTransaction(double transactionValue) {
-        this.size++;
-        double[] newTab = new double[this.size];
-        System.arraycopy(cashMachine, 0, newTab, 0, cashMachine.length);
-        newTab[this.size - 1] = transactionValue;
-        this.cashMachine = newTab;
+        if (transactionValue < -5000) {
+            System.out.println("You exceeded maximum value");
+        } else {
+            this.size++;
+            double[] newTab = new double[this.size];
+            System.arraycopy(cashMachine, 0, newTab, 0, cashMachine.length);
+            newTab[this.size - 1] = transactionValue;
+            this.cashMachine = newTab;
+        }
     }
 
     public double[] getCashMachine() {
