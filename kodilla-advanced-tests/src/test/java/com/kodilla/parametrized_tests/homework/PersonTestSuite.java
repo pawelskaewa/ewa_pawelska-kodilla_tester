@@ -83,4 +83,11 @@ class PersonTestSuite {
         Person person = new Person(input, input2);
         assertEquals("Obese Class VI (Hyper Obese)", person.getBMI());
     }
+
+    @ParameterizedTest
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.PersonTestObjects#provideIncorrectIntsForTestingBMI")
+    public void testValuesOutsideRange (double input, double input2) {
+        Person person = new Person(input, input2);
+        assertEquals("Improper weight or height given", person.getBMI());
+    }
 }

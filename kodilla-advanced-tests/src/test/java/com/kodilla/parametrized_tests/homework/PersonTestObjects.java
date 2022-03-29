@@ -6,10 +6,18 @@ import java.util.stream.Stream;
 
 public class PersonTestObjects {
 
+    static Stream<Arguments> provideIncorrectIntsForTestingBMI() {
+        return Stream.of(
+                Arguments.of(-1.70, 40.0),
+                Arguments.of(0.3, 30.0),
+                Arguments.of(1.70, 4565445.0),
+                Arguments.of(5, 100)
+        );
+    }
+
     static Stream<Arguments> provideIntsForTestingBMIBelow15() {
         return Stream.of(
                 Arguments.of(1.70, 40.0),
-                Arguments.of(-1.70, 40.0),
                 Arguments.of(1.80, 30.0)
         );
     }
@@ -82,8 +90,6 @@ public class PersonTestObjects {
         return Stream.of(
                 Arguments.of(1.70, 180.0),
                 Arguments.of(1.70, 333.0),
-                Arguments.of(1.70, 4565445.0),
-                Arguments.of(5, 45454545),
                 Arguments.of(1.60, 160.0)
         );
     }
