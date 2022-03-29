@@ -1,16 +1,28 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
-import static com.kodilla.collections.adv.exercises.homework.FlightRepository.flightsTable;
-
 public class FlightFinder {
-    public List<String> findFlightsFrom(String departure) {
-        return flightsTable.getOrDefault(departure, Collections.emptyList());
+    public List<Flight> findFlightsFrom(String departure) {
+        List<Flight> flightsFrom = new ArrayList<>();
+
+        for(int i = 0; i < FlightRepository.getFlightsTable().size(); i++){
+            if (FlightRepository.getFlightsTable().get(i).getDeparture() == departure){
+                flightsFrom.add(FlightRepository.getFlightsTable().get(i));
+            }
+        }
+        return flightsFrom;
     }
 
-//    public List<Flight> findFlightsTo(String arrival) {
-//        return flightsTable.getOrDefault(newFlight, Collections.emptyList());
-//    }
+    public List<Flight> findFlightsTo(String arrival) {
+        List<Flight> flightsTo = new ArrayList<>();
+
+        for(int i = 0; i < FlightRepository.getFlightsTable().size(); i++){
+            if (FlightRepository.getFlightsTable().get(i).getArrival() == arrival){
+                flightsTo.add(FlightRepository.getFlightsTable().get(i));
+            }
+        }
+        return flightsTo;
+    }
 }
