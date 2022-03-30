@@ -31,7 +31,7 @@ class GamblingMachineTestSuite {
     void expectedException(int input1, int input2, int input3, int input4, int input5, int input6) throws InvalidNumbersException {
         assertThrows(InvalidNumbersException.class, () -> {
             gamblingMachine.howManyWins(new HashSet<>(Arrays.asList(input1, input2, input3, input4, input5, input6)));
-        }, "something should have been thrown");
+        }, "InvalidNumbersException should have been thrown, but it didn't happen");
     }
 
     @Test
