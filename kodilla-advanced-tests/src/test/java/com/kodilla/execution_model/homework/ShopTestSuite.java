@@ -31,8 +31,10 @@ class ShopTestSuite {
     @Test
     public void shouldReturnListOfOrdersNoOlderThanTwoYears() {
         shop.addNewOrder(firstOrder);
+        shop.addNewOrder(secondOrder);
+        shop.addNewOrder(thirdOrder);
         shop.addNewOrder(forthOrder);
-        assertEquals(1, shop.getListOfOrdersNoOlderThanTwoYears().size());
+        assertEquals(3, shop.getListOfOrdersNoOlderThanTwoYears().size());
     }
 
     @Test
