@@ -15,8 +15,12 @@ public class WeatherService {
         this.serviceUsers.forEach((user, localization) -> user.receive(regularNotification));
     }
 
-    public void sendNotificationToLocalization(WeatherNotification weatherNotification) {
-        this.serviceUsers.forEach((user, localization) -> user.receive(weatherNotification));
+    public void sendNotificationToLocalization(Localization localization) {
+        for (int i = 0; i < serviceUsers.size(); i++) {
+            if (serviceUsers.containsValue(localization)) {
+
+            }
+        }
     }
 
     public void removeSubscriber(User user) {
@@ -27,14 +31,15 @@ public class WeatherService {
         this.serviceUsers.remove(user, localization);
     }
 
-    public int getSize(){
+    public int getSize() {
         return serviceUsers.size();
     }
 
     public List<Localization> findLocalizations(User user) {
         return serviceUsers.getOrDefault(user, Collections.emptyList());
     }
-    public void removeLocation (Localization localization) {
+
+    public void removeLocation(Localization localization) {
         this.serviceUsers.remove(localization);
     }
 }
