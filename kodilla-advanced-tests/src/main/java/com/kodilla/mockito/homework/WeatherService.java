@@ -3,43 +3,38 @@ package com.kodilla.mockito.homework;
 import java.util.*;
 
 public class WeatherService {
-    private Map<User, List<Localization>> serviceUsers = new HashMap<>();
+    Set<User> serviceUsers = new HashSet<>();
+    Map<String, Set<User>> localizationSubscription = new HashMap<>();
 
-    public void addSubscriber(User user, Localization localization) {
-        List<Localization> localizationList = serviceUsers.getOrDefault(user, new NoDuplicatesList<>());
-        localizationList.add(localization);
-        this.serviceUsers.put(user, localizationList);
+    public void addSubscriber(String localization, User user) {
+        serviceUsers.add(user);
+        Set<User> localizationSubscriptionsSet = localizationSubscription.getOrDefault(localization, new HashSet<>());
+        localizationSubscriptionsSet.add(user);
+        localizationSubscription.put(localization, localizationSubscriptionsSet);
     }
 
-    public void sendNotificationToAll(RegularNotification regularNotification) {
-        this.serviceUsers.forEach((user, localization) -> user.receive(regularNotification));
+    public void sendNotificationToAll(Notification notification) {
+        serviceUsers.forEach((user) -> user.receive(notification));
     }
 
-    public void sendNotificationToLocalization(Localization localization) {
-        for (int i = 0; i < serviceUsers.size(); i++) {
-            if (serviceUsers.containsValue(localization)) {
-
-            }
-        }
+    public void sendNotificationToLocalization(String localization, Notification notification) {
+        localizationSubscription.getOrDefault(localization, new HashSet<>()).stream().forEach(person -> person.receive(notification));
     }
 
     public void removeSubscriber(User user) {
-        this.serviceUsers.remove(user);
+        serviceUsers.remove(user);
+        localizationSubscription.values().forEach(people -> people.remove(user));
     }
 
-    public void removeSubscriber(User user, Localization localization) {
-        this.serviceUsers.remove(user, localization);
+    public void removeSubscriber(String localization, User user) {
+        localizationSubscription.getOrDefault(localization, new HashSet<>()).remove(user);
     }
 
     public int getSize() {
         return serviceUsers.size();
     }
 
-    public List<Localization> findLocalizations(User user) {
-        return serviceUsers.getOrDefault(user, Collections.emptyList());
-    }
-
-    public void removeLocation(Localization localization) {
-        this.serviceUsers.remove(localization);
+    public void removeLocalization(String localization) {
+        localizationSubscription.remove(localization);
     }
 }

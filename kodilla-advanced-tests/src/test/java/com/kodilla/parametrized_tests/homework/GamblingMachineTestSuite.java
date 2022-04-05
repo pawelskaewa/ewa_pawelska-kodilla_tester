@@ -26,6 +26,24 @@ class GamblingMachineTestSuite {
         assertEquals(0, result, 6);
     }
 
+//    @ParameterizedTest
+//    @CsvFileSource(resources = "/luckyNumbers.csv")
+//    public void testWithCorrectNumbersVersion2 (String numbers) throws InvalidNumbersException {
+//        String[] splittedNumbers = numbers.split(",");
+//        int[] intNumbers = new int[6];
+//
+//        for(int i = 0; i < 6; i++) {
+//            intNumbers[i] = Integer.valueOf(splittedNumbers[i]);
+//        }
+//        int result = 0;
+//        try {
+//            result = gamblingMachine.howManyWins(intNumbers);
+//        } catch (InvalidNumbersException e) {
+//            e.printStackTrace();
+//        }
+//        assertEquals(0, result, 6);
+//    }
+
     @ParameterizedTest
     @CsvFileSource(resources = "/wrongNumbers.csv")
     void expectedException(int input1, int input2, int input3, int input4, int input5, int input6) throws InvalidNumbersException {

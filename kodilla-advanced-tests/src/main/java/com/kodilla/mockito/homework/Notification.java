@@ -1,4 +1,4 @@
 package com.kodilla.mockito.homework;
 
-public interface RegularNotification {
+public interface Notification {
 }
