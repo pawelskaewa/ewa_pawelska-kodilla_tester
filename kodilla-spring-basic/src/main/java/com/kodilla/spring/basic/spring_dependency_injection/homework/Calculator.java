@@ -11,7 +11,7 @@ public class Calculator {
     }
 
     public double add(double a, double b) {
-        double result = a + b;
+        double result = a+b;
         display.display(result);
         return result;
     }
