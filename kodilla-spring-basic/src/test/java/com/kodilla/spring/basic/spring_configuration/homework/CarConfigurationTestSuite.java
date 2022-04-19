@@ -23,46 +23,46 @@ class CarConfigurationTestSuite {
 
     @Test
     public void ifSummerThenCabrio() {
-        carConfiguration.setChosenDate(LocalDate.of(2021,07,04));
-        Car car = (Car)context.getBean("getCar");
+        carConfiguration.setChosenDate(LocalDate.of(2021, 07, 04));
+        Car car = (Car) context.getBean("getCar");
         String carType = car.getCarType();
         Assertions.assertEquals("Cabrio", carType);
     }
 
     @Test
     public void ifSpringThenSedan() {
-        carConfiguration.setChosenDate(LocalDate.of(2021,04,04));
-        Car car = (Car)context.getBean("getCar");
+        carConfiguration.setChosenDate(LocalDate.of(2021, 04, 04));
+        Car car = (Car) context.getBean("getCar");
         String carType = car.getCarType();
         Assertions.assertEquals("Sedan", carType);
     }
 
     @Test
     public void ifFallThenSedan() {
-        carConfiguration.setChosenDate(LocalDate.of(2021,9,30));
-        Car car = (Car)context.getBean("getCar");
+        carConfiguration.setChosenDate(LocalDate.of(2021, 9, 30));
+        Car car = (Car) context.getBean("getCar");
         String carType = car.getCarType();
         Assertions.assertEquals("Sedan", carType);
     }
 
     @Test
     public void shouldHaveLightsTurnedOff() {
-        Car car = (Car)context.getBean("getCar");
-        car.setChosenTime(LocalTime.of(7,0));
+        Car car = (Car) context.getBean("getCar");
+        car.setChosenTime(LocalTime.of(7, 0));
         Assertions.assertEquals(false, car.hasHeadlightsTurnedOn());
     }
 
     @Test
     public void shouldHaveLightsTurnedOn() {
-        Car car = (Car)context.getBean("getCar");
-        car.setChosenTime(LocalTime.of(5,0));
+        Car car = (Car) context.getBean("getCar");
+        car.setChosenTime(LocalTime.of(5, 0));
         Assertions.assertEquals(true, car.hasHeadlightsTurnedOn());
     }
 
     @Test
     public void shouldHaveLightsTurnedOnAfterEightPM() {
-        Car car = (Car)context.getBean("getCar");
-        car.setChosenTime(LocalTime.of(22,0));
+        Car car = (Car) context.getBean("getCar");
+        car.setChosenTime(LocalTime.of(22, 0));
         Assertions.assertEquals(true, car.hasHeadlightsTurnedOn());
     }
 }

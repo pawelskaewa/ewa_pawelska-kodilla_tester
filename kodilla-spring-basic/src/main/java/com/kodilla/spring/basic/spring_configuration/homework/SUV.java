@@ -4,11 +4,11 @@ import java.time.LocalTime;
 
 public class SUV implements Car {
 
-    private LocalTime chosenTime = LocalTime.of(0,0);
+    private LocalTime chosenTime = LocalTime.of(0, 0);
 
     @Override
     public boolean hasHeadlightsTurnedOn() {
-        if (chosenTime.isAfter(LocalTime.of(0, 0)) && chosenTime.isBefore(LocalTime.of(6, 0)) || chosenTime.equals(LocalTime.of(0,0))) {
+        if (chosenTime.isAfter(LocalTime.of(0, 0)) && chosenTime.isBefore(LocalTime.of(6, 0)) || chosenTime.equals(LocalTime.of(0, 0))) {
             System.out.println("Lights are turned on");
             return true;
         } else if (chosenTime.isAfter(LocalTime.of(6, 1)) && chosenTime.isBefore(LocalTime.of(20, 0))) {

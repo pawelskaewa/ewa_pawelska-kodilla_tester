@@ -2,9 +2,9 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 
 import java.time.LocalTime;
 
-public class Cabrio implements Car{
+public class Cabrio implements Car {
 
-    private LocalTime chosenTime = LocalTime.of(0,0);
+    private LocalTime chosenTime = LocalTime.of(0, 0);
 
     @Override
     public boolean hasHeadlightsTurnedOn() {

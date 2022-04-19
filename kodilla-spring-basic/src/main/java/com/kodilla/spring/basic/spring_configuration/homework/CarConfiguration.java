@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Configuration
 public class CarConfiguration {
 
-    private LocalDate chosenDate = LocalDate.of(2022,01,01);
+    private LocalDate chosenDate = LocalDate.of(2022, 01, 01);
 
     public String getSeason() {
         int year = chosenDate.getYear();
@@ -18,6 +18,7 @@ public class CarConfiguration {
         LocalDate fallStart = LocalDate.of(year, 9, 23);
         LocalDate winterStart = LocalDate.of(year, 12, 22);
         LocalDate nextSpringStart = LocalDate.of(year + 1, 03, 21);
+
         if (chosenDate.isAfter(LocalDate.of(year, 1, 1)) && chosenDate.isBefore(springStart) || chosenDate.isEqual(LocalDate.of(year, 1, 1)))
             return "Winter";
         else if (chosenDate.isAfter(springStart) && chosenDate.isBefore(summerStart) || chosenDate.isEqual(springStart))
