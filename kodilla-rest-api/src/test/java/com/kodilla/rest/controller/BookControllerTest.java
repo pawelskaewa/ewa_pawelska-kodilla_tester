@@ -32,7 +32,7 @@ class BookControllerTest {
     @Test
     public void shouldAddBooks() {
         // test przechodzi, ale nie jestem pewna czy to o to chodziło, czy mogę w ten sposób zamockować BookController
-        BookService bookServiceMock = Mockito.mock(BookService.class);
+//        BookService bookServiceMock = Mockito.mock(BookService.class);
         BookController bookController = Mockito.mock(BookController.class);
         BookDto book = new BookDto("Title", "Author");
         bookController.addBook(book);
