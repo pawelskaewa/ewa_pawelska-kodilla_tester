@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AllegroTestingApp {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");      // [1]
+        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl/");
 
@@ -20,8 +20,8 @@ public class AllegroTestingApp {
         inputField.click();
 
         WebElement category = driver.findElement(By.xpath("//*[@aria-label=\"Kategoria i opcje wyszukiwania\"]"));
-        Select yearSelect = new Select(category);
-        yearSelect.selectByIndex(3);
+        Select categorySelect = new Select(category);
+        categorySelect.selectByIndex(3);
 
         WebElement drone = driver.findElement(By.xpath("//*[@placeholder=\"czego szukasz?\"]"));
         drone.sendKeys("Mavic mini");
