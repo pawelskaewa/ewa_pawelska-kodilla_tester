@@ -8,6 +8,8 @@ public class GoogleExample {
         System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");      // [1]
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
+//        driver.navigate().to("http://www.google.com");
+//        driver.switchTo().frame(0);
 
 //        WebDriverWait wait = new WebDriverWait(driver, 20);
 //        WebElement inputFieldTwo = driver.findElement(By.cssSelector("div.QS5gu.sy4vM"));
