@@ -8,6 +8,10 @@ public class Cashier {
     }
 
     public void withdraw(Wallet wallet, int amount) {
+        if (amount > wallet.getBalance()) {
+            System.out.print("I don't have enough money in my wallet");    // musiałam bez ln, żeby mi wrzuciło do loga bez entera
+        } else
+        wallet.debit(amount);
         cashSlot.dispense(amount);
     }
 }

@@ -4,8 +4,9 @@ Feature: Cash Withdrawal
     Given I have deposited <amount> in my wallet
     When I request <withdrawal>
     Then <withdrawal> should be dispensed
+    And the balance of my wallet should be <balance>
     Examples:
-      | amount | withdrawal |
-      | $200   | $30        |
-      | $20    | $30        |
-      | $30    | $30        |
+      | amount | withdrawal |balance|
+      | $200   | $30        |$170   |
+#      | $20    | $30        |$-10   |
+      | $30    | $30        |$0     |
