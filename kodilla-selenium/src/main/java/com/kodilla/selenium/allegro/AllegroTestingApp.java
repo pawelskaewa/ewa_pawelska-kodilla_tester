@@ -10,13 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AllegroTestingApp {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://allegro.pl/");
 
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//html/body/div[3]/div[1]/div/div[2]/div[2]/button[1]")));
-        WebElement inputField = driver.findElement(By.xpath("//html/body/div[3]/div[1]/div/div[2]/div[2]/button[1]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//html/body/div[2]/div[1]/div/div[2]/div[2]/button[1]")));
+        WebElement inputField = driver.findElement(By.xpath("//html/body/div[2]/div[1]/div/div[2]/div[2]/button[1]"));
         inputField.click();
 
         WebElement category = driver.findElement(By.xpath("//*[@aria-label=\"Kategoria i opcje wyszukiwania\"]"));

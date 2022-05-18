@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EBayTestingApp {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");      // [1]
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");      // [1]
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.com");
 
