@@ -1,7 +1,7 @@
 public class LeapYear {
 
     public static void main(String[] args) {
-        int yearInQuestion = 2000;
+        int yearInQuestion = 1900;
         int reminderOfDivision4 = yearInQuestion%4;
         int reminderOfDivision100 = yearInQuestion%100;
         int reminderOfDivision400 = yearInQuestion%400;
